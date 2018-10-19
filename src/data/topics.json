@@ -1,0 +1,79 @@
+{
+    "title": "Career Path",
+    "values": [
+        {
+            "title": "3D + Animation",
+            "facets": [
+                {
+                    "title": "Topics",
+                    "values": [
+                        { "title": "Modeling"},
+                        { "title": "Animation"},
+                        { "title": "Rendering"},
+                        { "title": "Textures"},
+                        { "title": "Materials"},
+                        { "title": "Character Animation"},
+                        { "title": "Visual Effects"},
+                        { "title": "Game Development"},
+                        { "title": "Lighting"},
+                        { "title": "Game Design"},
+                        { "title": "Previsualization"},
+                        { "title": "Rigging"},
+                        { "title": "Projects"},
+                        { "title": "Documentaries"},
+                        { "title": "Particles + Dynamics"},
+                        { "title": "Compositing"},
+                        { "title": "BIM"},
+                        { "title": "Post Production"},
+                        { "title": "Creative Spark"}
+                    ]
+                },
+                {
+                    "title": "Software",
+                    "values": [
+                        { "title": "Autodesk"},
+                        { "title": "Maya"},
+                        { "title": "Adobe"},
+                        { "title": "3ds Max"},
+                        { "title": "MAXON"},
+                        { "title": "CINEMA 4D"},
+                        { "title": "Photoshop" }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Audio + Music"
+        },
+        {
+            "title": "Business"
+        },
+        {
+            "title": "CAD"
+        },
+        {
+            "title": "Design"
+        },
+        {
+            "title": "Developer"
+        },
+        {   
+            "title": "Education + Learning"
+        },
+        {
+            "title": "IT"
+        },
+        {
+            "title": "Marketing"
+        },
+        {
+            "title": "Photography"
+        },
+        {
+            "title": "Video"
+        },
+        {
+            "title": "Web"
+        }
+    ]
+}
