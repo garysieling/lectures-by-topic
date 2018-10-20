@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
 //import Layout from '../components/layout'
 //import Video from '../components/video'
-import { StaticQuery, Link, graphql } from "gatsby"
-import { css } from "react-emotion"
-import { Helmet } from "react-helmet"
-import _ from 'lodash';
+import { StaticQuery, Link, graphql } from "gatsby";
+import { css } from "react-emotion";
+import { Helmet } from "react-helmet";
+import _ from "lodash";
 
 const Facet = (facetData) => 
   <div>
@@ -51,7 +51,7 @@ const Facet = (facetData) =>
         )
       } 
     </ul>
-  </div>
+  </div>;
 
 const IndexPage = ({ children }) => (
   <div className="application">
@@ -116,6 +116,6 @@ const IndexPage = ({ children }) => (
       )}
     />
   </div>
-)
+);
 
-export default IndexPage
+export default IndexPage;
