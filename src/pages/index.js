@@ -5,35 +5,51 @@ import React from 'react'
 import { StaticQuery, Link, graphql } from "gatsby"
 import { css } from "react-emotion"
 import { Helmet } from "react-helmet"
+import _ from 'lodash';
 
-const Facet = ({title, values}) => 
+const Facet = (facetData) => 
   <div>
-    <h1>{title}</h1>
+    <h1>{facetData.title}</h1>
       <ul>
-      {values.map(({ title, facets }, i) => (
-        <li key={i}>
-          <Link to={`/${title}`}>
-            {title}
-          </Link>
-          {
-            facets !== null ? 
-              facets.map(
-                (subFacet, i) => 
-                  <div key={i}>
-                    {subFacet.title}
-                    <ul>
-                      {
-                        subFacet.values.map(
-                          ({title, i}) => 
-                            <li key={i}>{title}</li>
-                        )
-                      }
-                    </ul>
-                  </div>
-            ) : null
-          }
-        </li>
-      ))} 
+      {
+        facetData.values.map((facetValue, i) => (
+          <li key={i}>
+            <Link to={`/${facetData.title}/${facetValue.title}`}>
+              {facetValue.title}
+            </Link>
+            {
+              facetValue.facets !== null ? 
+                facetValue.facets.map(
+                  (subFacet, i) => 
+                    <div key={i}>
+                      {subFacet.title}
+                      <ul>
+                        {
+                          _.take(subFacet.values, 11).map(
+                            (subFacetValue, i) => 
+                              i >= 10 ? (
+                                <li key={i}>
+                                  <Link to={`/${facetData.title}/${facetValue.title}`}>
+                                    More...
+                                  </Link>
+                                </li>
+                              ) : (
+                                <li key={i}>
+                                  <Link to={`/${facetData.title}/${facetValue.title}/${subFacet.title}/${subFacetValue.title}`}>
+                                    {subFacetValue.title}
+                                  </Link>
+                                </li>
+                              )
+                            )
+                        }
+                      </ul>
+                    </div>
+                  ) : null
+              }
+            </li>
+          )
+        )
+      } 
     </ul>
   </div>
 
