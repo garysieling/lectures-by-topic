@@ -10,47 +10,45 @@ import _ from "lodash";
 const Facet = (facetData) => 
   <div>
     <h1>{facetData.title}</h1>
-      <ul>
-      {
-        facetData.values.map((facetValue, i) => (
-          <li key={i}>
-            <Link to={`/${facetData.title}/${facetValue.title}`}>
-              {facetValue.title}
-            </Link>
-            {
-              facetValue.facets !== null ? 
-                facetValue.facets.map(
-                  (subFacet, i) => 
-                    <div key={i}>
-                      {subFacet.title}
-                      <ul>
-                        {
-                          _.take(subFacet.values, 11).map(
-                            (subFacetValue, i) => 
-                              i >= 10 ? (
-                                <li key={i}>
-                                  <Link to={`/${facetData.title}/${facetValue.title}`}>
-                                    More...
-                                  </Link>
-                                </li>
-                              ) : (
-                                <li key={i}>
-                                  <Link to={`/${facetData.title}/${facetValue.title}/${subFacet.title}/${subFacetValue.title}`}>
-                                    {subFacetValue.title}
-                                  </Link>
-                                </li>
-                              )
+    {
+      facetData.values.map((facetValue, i) => (
+        <div key={i}>
+          <Link to={`/${facetData.title}/${facetValue.title}`}>
+            {facetValue.title}
+          </Link>
+          {
+            facetValue.facets !== null ? 
+              facetValue.facets.map(
+                (subFacet, i) => 
+                  <div key={i}>
+                    {subFacet.title}
+                    <div>
+                      {
+                        _.take(subFacet.values, 11).map(
+                          (subFacetValue, i) => 
+                            i >= 10 ? (
+                              <div key={i}>
+                                <Link to={`/${facetData.title}/${facetValue.title}`}>
+                                  More...
+                                </Link>
+                              </div>
+                            ) : (
+                              <div key={i}>
+                                <Link to={`/${facetData.title}/${facetValue.title}/${subFacet.title}/${subFacetValue.title}`}>
+                                  {subFacetValue.title}
+                                </Link>
+                              </div>
                             )
-                        }
-                      </ul>
+                          )
+                      }
                     </div>
-                  ) : null
-              }
-            </li>
-          )
+                  </div>
+                ) : null
+            }
+          </div>
         )
-      } 
-    </ul>
+      )
+    } 
   </div>;
 
 const IndexPage = ({ children }) => (
@@ -59,6 +57,8 @@ const IndexPage = ({ children }) => (
         <meta charSet="utf-8" />
         <title>Gary</title>
         <link rel="canonical" href="http://mysite.com/example" />
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css" />
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.js" />
         <script type="text/javascript" src="//platform.linkedin.com/in.js">{`
             api_key:   ${process.env.LINKEDIN_API_KEY}
         `}</script>
